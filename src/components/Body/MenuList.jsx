@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import dishes from '../../data/dishes'
+import MenuItem from './MenuItem';
+import DisplayItem from './DisplayItem';
 
 const MenuList = () => {
-  return (
-    <div>
-      <div className="row">
-        <div className="col">Left 6</div>
-        <div className="col">Right 6</div>
-      </div>
-    </div>
-  )
+
+    const [item, setItem] = useState(dishes);
+    const [selectedDish, setSelectedDish] = useState(dishes[0]);
+
+    const menuItems = item.map((listItem) => {
+        return (
+            <MenuItem listItem={listItem}
+                changedItem={() => selectedDishItem(listItem)}
+                key={listItem.id} />
+        )
+    })
+
+    const selectedDishItem = item => {
+        setSelectedDish(item);
+    }
+
+    return (
+        <div>
+            <div className="row">
+                <div className="col-6">{menuItems}</div>
+                <div className="col-6"><DisplayItem dishItem={selectedDish}/></div>
+            </div>
+        </div>
+    )
 }
 
 export default MenuList

@@ -3,7 +3,7 @@ import MenuList from './MenuList'
 
 const Body = () => {
   return (
-    <div>
+    <div className='container'>
       <MenuList />
     </div>
   )
