@@ -7,7 +7,7 @@ const MenuItem = props => {
             <Card style={{ width: '25rem' }}>
                 <Card.Img variant="top" src={props.listItem.image} />
                 <Card.Body>
-                    <Card.Title style={{cursor:"pointer"}}>{props.listItem.name}</Card.Title>
+                    <Card.Title style={{cursor:"pointer"}} onClick={props.changedItem}>{props.listItem.name}</Card.Title>
                     <Card.Text>
                         {props.listItem.description}
                     </Card.Text>
