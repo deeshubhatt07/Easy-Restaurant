@@ -1,8 +1,22 @@
 import React from 'react'
 import {Card,Button} from 'react-bootstrap'
 import Comments from './Comments'
+import commentData from '../../data/comments'
+import { useEffect,useState } from 'react'
 
 const DisplayItem = props => {
+
+  const [comment, setComment] = useState([]);
+
+  useEffect(() => {
+    const comment = commentData.filter((com) => {
+      if(props.dishItem.id===com.id)
+        return com;
+    })
+    setComment(comment)
+  }, [])
+  
+
   return (
     <div>
         <Card style={{ width: '35rem' }}>
@@ -15,7 +29,7 @@ const DisplayItem = props => {
                     <p>price - {props.dishItem.price}$</p>
                 </Card.Body>
             </Card>
-            <Comments id={props.dishItem.id}/>
+            <Comments id={comment}/>
     </div>
   )
 }
