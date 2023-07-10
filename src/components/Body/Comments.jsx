@@ -1,5 +1,4 @@
 import React from 'react'
-import comments from '../../data/comments'
 import { Table } from 'react-bootstrap';
 
 const Comments = props => {
@@ -18,11 +17,11 @@ const Comments = props => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Tuesday</td>
+                        <td>{props.comment.dishId}</td>
+                        <td>{props.comment.rating}</td>
+                        <td>{props.comment.comment}</td>
+                        <td>{props.comment.author}</td>
+                        <td>{props.comment.date}</td>
                     </tr>
                 </tbody>
             </Table>
