@@ -3,3 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.headerLinks{
+    text-decoration: none;
+    padding: 10px;
+    color: white
+}
