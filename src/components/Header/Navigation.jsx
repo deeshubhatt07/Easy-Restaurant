@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar,Nav,Container } from 'react-bootstrap'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
   return (
@@ -9,9 +10,9 @@ const Navigation = () => {
         <Container className='header'>
           <Navbar.Brand href="#home">Easy Restaurant</Navbar.Brand>
           <Nav>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Link to='/'>Home</Link>
+            <Link to='/about'>About</Link>
+            <Link to='/contact'>Contact</Link>
           </Nav>
         </Container>
       </Navbar>
