@@ -3,14 +3,19 @@ import dishes from '../../data/dishes'
 import MenuItem from './MenuItem';
 import DisplayItem from './DisplayItem';
 import commentData from '../../data/comments'
+import { Button,Modal } from 'react-bootstrap';
 
 const MenuList = () => {
 
     const [item, setItem] = useState(dishes);
     const [selectedDish, setSelectedDish] = useState(dishes[0]);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const comment2 = commentData.filter((com) => {
-        if (0===com.dishId)
+        if (0 === com.dishId)
             return com;
     })
 
@@ -36,8 +41,17 @@ const MenuList = () => {
     return (
         <div>
             <div className="row">
-                <div className="col-6">{menuItems}</div>
-                <div className="col-6"><DisplayItem dishItem={selectedDish} comment={comment}/></div>
+                <div className="col-6"  onClick={handleShow}>{menuItems}</div>
+                <div className="col-6">
+                    <Modal size='lg' show={show} onHide={handleClose}>
+                        <Modal.Body><DisplayItem dishItem={selectedDish} comment={comment} /></Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
             </div>
         </div>
     )
