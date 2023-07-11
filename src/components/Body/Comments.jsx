@@ -2,7 +2,6 @@ import React from 'react'
 import { Table } from 'react-bootstrap';
 
 const Comments = props => {
-    console.log(props);
     return (
         <div>
             <Table striped bordered hover size="sm">
