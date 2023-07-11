@@ -10,9 +10,9 @@ const Navigation = () => {
         <Container className='header'>
           <Navbar.Brand href="#home">Easy Restaurant</Navbar.Brand>
           <Nav>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/contact'>Contact</Link>
+            <Link className='headerLinks' to='/'>Home</Link>
+            <Link className='headerLinks' to='/about'>About</Link>
+            <Link className='headerLinks' to='/contact'>Contact</Link>
           </Nav>
         </Container>
       </Navbar>
