@@ -3,7 +3,7 @@ import dishes from '../../data/dishes'
 import MenuItem from './MenuItem';
 import DisplayItem from './DisplayItem';
 import commentData from '../../data/comments'
-import { Button,Modal } from 'react-bootstrap';
+import { Button, Modal, Container, Row } from 'react-bootstrap';
 
 const MenuList = () => {
 
@@ -39,21 +39,19 @@ const MenuList = () => {
     }
 
     return (
-        <div>
-            <div className="row">
-                <div className="col-6"  onClick={handleShow}>{menuItems}</div>
-                <div className="col-6">
-                    <Modal size='lg' show={show} onHide={handleClose}>
-                        <Modal.Body><DisplayItem dishItem={selectedDish} comment={comment} /></Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose}>
-                                Close
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
-                </div>
+        <Container fluid={true}>
+            <Row lg={3} md={3} sm={6} xs={6} onClick={handleShow}>{menuItems}</Row>
+            <div>
+                <Modal size='lg' show={show} onHide={handleClose}>
+                    <Modal.Body><DisplayItem dishItem={selectedDish} comment={comment} /></Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
-        </div>
+        </Container>
     )
 }
 
