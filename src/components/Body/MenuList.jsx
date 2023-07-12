@@ -6,6 +6,7 @@ import commentData from '../../data/comments'
 import { Button, Modal, Container, Row } from 'react-bootstrap';
 
 const MenuList = () => {
+    document.title="Menu List"
 
     const [item, setItem] = useState(dishes);
     const [selectedDish, setSelectedDish] = useState(dishes[0]);

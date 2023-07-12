@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 
 const About = () => {
+    document.title="About Us"
     return (
         <div>
             <h1>About Us</h1>

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 
 const Contact = () => {
+    document.title="Contact Us"
     return (
         <div>
             <Fragment>
