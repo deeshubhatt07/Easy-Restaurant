@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 
 const Header = () => {
   return (
-    <div>
+    <div style={{marginBottom:"25px"}}>
         <Navigation />
     </div>
   )
