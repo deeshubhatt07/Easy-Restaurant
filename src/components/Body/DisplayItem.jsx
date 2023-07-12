@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap'
 import Comments from './Comments'
 
 const DisplayItem = props => {
-
   const comments = props.comment.map((com) => {
     return (
       <Comments comment={com} key={com.id}/>
